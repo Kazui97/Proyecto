@@ -7,7 +7,7 @@ public class ZombieOp : MonoBehaviour
     
 
     // public string [] Gustos;
-    public CosasZombie datosZombi;
+    public CosasZombie datosZombi;      // variable de la estructura de los zombies
     int cambimov;
    
 
@@ -17,15 +17,15 @@ public class ZombieOp : MonoBehaviour
     {
         
 
-        datosZombi.colorEs = (CosasZombie.ColorZombie)Random.Range(0, 3);
+        datosZombi.colorEs = (CosasZombie.ColorZombie)Random.Range(0, 3);       // genera un random de los colores para los zombis
 
-        int dargusto = Random.Range(0, 5);
+        int dargusto = Random.Range(0, 5);                          // rango de los gustos del zombi
         datosZombi.sabroso = (CosasZombie.Gustos)dargusto;
 
     }
     void Start()
     {
-        datosZombi.condicion = (CosasZombie.Estados)0;
+        datosZombi.condicion = (CosasZombie.Estados)0;      // la implementacion de la corutinas del zombi o cambios de estado 
         StartCoroutine ("Cambioestado");
     }
 
@@ -34,7 +34,7 @@ public class ZombieOp : MonoBehaviour
     {
         
 
-        switch(datosZombi.condicion)
+        switch(datosZombi.condicion)            // cambio de estados devido ala corutina 
         {
             case CosasZombie.Estados.Idle:
                 transform.eulerAngles += new Vector3(0, 0.5f, 0);
@@ -72,7 +72,7 @@ public class ZombieOp : MonoBehaviour
     }
     
    
-    IEnumerator Cambioestado()
+    IEnumerator Cambioestado()          // la corutina se encar de cambiar los estado cada 5 segundo 
     {
         while (true)
         {
@@ -97,7 +97,7 @@ public class ZombieOp : MonoBehaviour
 
 
 
-public struct CosasZombie
+public struct CosasZombie       // la estructra que guarda los gustos , estados y colores deloszombies
 {
     public enum Gustos 
     {

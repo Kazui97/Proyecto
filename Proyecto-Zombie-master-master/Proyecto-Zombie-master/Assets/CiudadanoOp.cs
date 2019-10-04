@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class CiudadanoOp : MonoBehaviour
 {
-    public CosasCiudadanos datoCiudadanos;
+    public CosasCiudadanos datoCiudadanos;      //variable de la estructura del ciudadano
 
     void Awake()
     {
 
 
-        int darnombre = Random.Range(0, 20);
+        int darnombre = Random.Range(0, 20);            //rando de los nombre del ciudadano
         datoCiudadanos.genteNombres = (CosasCiudadanos.Nombres)darnombre;
-        int daredad = Random.Range(15, 100);
+        int daredad = Random.Range(15, 100);                //random de la edad
         datoCiudadanos.edadgente = (CosasCiudadanos.Edad)daredad;
 
     }
@@ -24,7 +24,7 @@ public class CiudadanoOp : MonoBehaviour
     }
 }
 
-public struct CosasCiudadanos
+public struct CosasCiudadanos       // estructuras y enum de los ciudadanos 
 {
    public enum Nombres
     {
